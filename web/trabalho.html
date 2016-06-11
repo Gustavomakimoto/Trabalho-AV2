@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <title> Cadastro de Cliente </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+        <script src="npm.js"></script>
+        <script src="jquery/jquery-1.12.3.min.js"></script>
+        <script type="text/javascript" src="jquery/jquery.mask.js"></script>
+        <script type="text/javascript" src="javascript.js"></script>
+        
+        
+    </head>
+    <style type="text/css" >
+        
+label.teste{
+    font-weight: bold;
+    margin: 4px;    
+        }    
+     
+        input.cpf{
+            border:2px solid #456879;
+            border-radius:10px;
+            width: 25%;
+            height:30px;
+        }
+        input.nome{
+            border:2px solid #456879;
+            border-radius:10px;
+            width: 60%;
+            height:30px;
+        }
+        input.cep{
+            border:2px solid #456879;
+            border-radius:10px;
+            width: 25%;
+            height:30px;
+        }
+        input.endereco{
+            border:2px solid #456879;
+            border-radius:10px;
+            width: 57%;
+            height:30px;
+        }
+        input.bairro{
+            border:2px solid #456879;
+            border-radius:10px;
+            width: 25%;
+            height:30px;
+        }
+        input.estado{
+            border:2px solid #456879;
+            border-radius:10px;
+            width: 25%;
+            height:30px;
+        }
+        input.cidade{
+            border:2px solid #456879;
+            border-radius:10px;
+            width: 25%;
+            height:30px;
+        }
+        input.telefone{
+            border:2px solid #456879;
+            border-radius:10px;
+            width: 15%;
+            height:30px;
+        }
+        input.email{
+            border:2px solid #456879;
+            border-radius:10px;
+            width: 39%;
+            height:30px;
+        }
+        input.senha{
+            border:2px solid #456879;
+            border-radius:10px;
+            width: 39%;
+            height:30px;
+        }
+        
+ input.campo {
+	border:2px solid #456879;
+	border-radius:10px;
+        width: 100%;
+        height:40px;
+        
+}
+
+
+select.campo {
+            border:2px solid #456879;
+            border-radius:10px;
+            width: 25%;
+            height:30px;
+        
+}
+
+textarea.campo {
+	border:2px solid #456879;
+	border-radius:10px;
+	height: 200px;
+	width: 100%;
+}
+ 
+body {
+    background-color: #E0FFFF;
+    max-width:900px;
+    margin:0 auto;
+}
+form{
+    padding:3px;
+    width:100%;
+}
+
+
+    </style>
+<body>
+    <div  class="container-fluid">
+        <form  name="cadastro">
+ 
+     
+   
+            <h3 class="titulo"><center> Cadastro de Clientes</center></h3><br>
+    
+      
+        <label class="teste">CPF:</label>
+            <input class="cpf" type='text/css' required="required" id="cpf" name='cpf' maxlength="14" onkeypress='mascara(this,cpfM)' onblur='clearTimeout(), CPF()' onfocus='cpf'>
+            
+    
+            <label class="teste" for="nome">Nome:</label>
+            <input  class="nome" id="nome"  type="text" name="nome"  onkeypress="return SomenteLetras();" required="required" onkeyup="maiuscula(this)" /><br><br>
+        
+      
+              <label class="teste" for="cep">CEP: </label>
+              <input class="cep" id="cep" type='text/css' required="required" maxlength="9" onkeypress='mascara(this,cepM)'type="text" name="cep" onblur='clearTimeout(), cep()' onfocus="cep"/>
+                
+            <label class="teste" for="endereco">Endereço: </label>
+            <input class="endereco" id="endereco" type="text" name="endereco" disabled/><br><br>
+        
+                <label class="teste" for="bairro">Bairro: </label>
+                <input class="bairro" id="bairro" type="text" name="bairro" disabled/>
+                 
+                 <label class="teste" for="estado">Estado: </label>
+              <input class="estado" id="estado" type="text" name="estado" disabled/>
+      
+              <label class="teste" for="cidade">Cidade: </label>
+              <input class="cidade" id="cidade" type="text" name="cidade" disabled/><br><br>
+       
+            <label for="civil" class="teste">Estado Civil:</label>
+                    <select class="campo" name="civil" id="civil" >
+                        <option value="">Escolher opção</option>
+                        <option value="solteiro">Solteiro</option> 
+                        <option value="casado">Casado</option>
+                    </select>
+            
+            <label for="sexo" class="teste">Sexo:</label>
+                    <select class="campo" name="sexo" id="sexo" >
+                        <option value="">Escolher sexo</option>
+                        <option value="mas">Masculino</option> 
+                        <option value="fem">Feminino</option>   
+                    </select>
+      
+                <label class="teste"for="telefone">Telefone: </label>
+                <input class="telefone" type='text' required="required" name='tel'  maxlength="15" onkeypress='mascara(this,telM)' onblur='clearTimeout()'><br><br>
+       
+                <label class="teste" for="login">E-mail(Login): </label>
+                <input class="email" id="email" required="required" type="email" name="login" size="25">
+        
+                <label class="teste" for="senha">Senha: </label>
+                <input class="senha" id="senha" required="required" onkeyup="this.value = Trim( this.value )" type="password" name="senha" size="15"><br><br>
+        
+                <label class="teste" for="login">Receber Promoções: </label><br>
+        
+            <div class="teste" border="0">
+                <label class="teste" for="sim">Sim</label>
+                <input  type='checkbox' name='opcao'  value="simCheckBox" id="simCheckBox" onclick='checkBoxMarcando( this )'>
+             <div type="text" style="color: red" id="msg" class="teste"> </div>
+                
+            </div>
+          
+        
+                <label class="teste" for="obs">Obs: </label><br>
+           
+                
+                    <textarea class="campo" id="obs" onkeypress='obsMaior200()' type="text" name="obs" maxlength="200" ></textarea><br><br>
+                
+        
+                    <center><div>
+                    <input class="btn btn-info" type="submit" name="enviar" id="enviar" value="Enviar" />
+         
+                    <input class="btn btn-danger" type="button" onclick="cancelar()"id="cancelar" value="Cancelar">
+                        </div></center>
+    </form>
+        </div>
+    
+                <table border="1" id="tabela" class="table" name="tabela" >
+                                        <thead>
+                                                <th>CPF</th>
+                                                <th>Nome</th>
+                                                <th></th>
+                                        </thead>
+                                        <tbody id="dados">
+                                        </tbody>
+                                </table>
+                        </body>
+</body>
+</html>
